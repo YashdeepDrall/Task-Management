@@ -10,7 +10,6 @@ RUN npm run build
 FROM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8000
 
 WORKDIR /app
 COPY backend/requirements.txt /app/backend/requirements.txt
