@@ -16,7 +16,7 @@ async def connect_to_mongo() -> AsyncIOMotorDatabase:
     if database is not None:
         return database
 
-    client = AsyncIOMotorClient(settings.mongo_url)
+    client = AsyncIOMotorClient(settings.mongo_uri)
     database = client[settings.db_name]
     await client.admin.command("ping")
     await create_indexes(database)
